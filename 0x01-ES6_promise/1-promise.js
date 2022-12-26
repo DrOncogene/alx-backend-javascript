@@ -6,5 +6,5 @@ export default function getResponseFromAPI(success) {
     });
   }
 
-  return Promise.reject(new Error('The fake API is not working correctly'));
+  return Promise.reject(new Error('The fake API is not working currently'));
 }
