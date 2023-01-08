@@ -1,4 +1,4 @@
-/// <reference path="Subject.ts" />
+/// <reference path="./Java.ts" />
 
 namespace Subjects {
   export interface Teacher {
@@ -9,8 +9,8 @@ namespace Subjects {
       return 'Here is the list of requirements for React';
     }
     getAvailableTeacher(): string {
-      if (this.teacher?.experienceTeachingReact <= 0) {
-        return 'No available teacher'
+      if (!this.teacher?.experienceTeachingReact) {
+        return 'No available teacher';
       }
       return `Available Teacher: ${this.teacher.firstName}`;
     }
