@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
 function displayMessage(msg) {
-  console.log(msg)
+  console.log(msg);
 }
 
-module.exports = displayMessage
+module.exports = displayMessage;
