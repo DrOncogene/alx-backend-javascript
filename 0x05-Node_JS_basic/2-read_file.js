@@ -2,7 +2,7 @@ const fs = require('fs');
 
 function countStudents(path) {
   try {
-    const db = fs.readFileSync(path, {encoding: 'utf-8'});
+    const db = fs.readFileSync(path, { encoding: 'utf-8' });
     const students = db.split('\n').slice(1);
     const numOfStudents = students.length;
     if (students[numOfStudents - 1] === '') {
@@ -25,7 +25,7 @@ function countStudents(path) {
       const list = studentsByFields[field];
       console.log(`Number of students in ${field}: ${list.length}. List: ${list.join(', ')}`);
     }
-  } catch {
+  } catch (error) {
     throw new Error('Cannot load the database');
   }
 }
