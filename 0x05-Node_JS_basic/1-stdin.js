@@ -13,13 +13,20 @@ if (process.stdin.isTTY) {
   });
 }
 
-const prompt = 'Welcome to Holberton School, what is your name?\n';
-readline.question(prompt, (name) => {
-  console.log(`Your name is: ${name}`);
-  readline.close();
-});
+const prompt = 'Welcome to Holberton School, what is your name?';
+console.log(prompt);
+process.stdin.once('data', (name) => {
+  process.stdout.write(`Your name is: ${name}`);
+  process.exit();
+})
+// readline.question(prompt, (name) => {
+//   // console.log(`Your name is: ${name}\r`);
+//   readline.write(`Your name is: ${name}\r`)
+//   process.stdout.write(`Your name is: ${name}\r`);
+//   readline.close();
+// });
 
 process.on('SIGINT', () => {
-  console.log('This important software is now closing');
+  console.log('\rThis important software is now closing');
   process.exit();
 });
