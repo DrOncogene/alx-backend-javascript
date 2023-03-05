@@ -4,7 +4,7 @@ async function countStudents(path) {
   return new Promise((res, rej) => {
     fs.readFile(path, { encoding: 'utf-8' }, (err, data) => {
       if (err) {
-        rej('Error: Cannot load the database');
+        rej(new Error('Cannot load the database'));
       } else {
         const students = data.split('\n').slice(1);
         const numOfStudents = students.length;
@@ -12,7 +12,7 @@ async function countStudents(path) {
           students.pop();
         }
         console.log(`Number of students: ${students.length}`);
-  
+
         const studentsByFields = {};
         for (const student of students) {
           const studentArray = student.split(',');
@@ -23,7 +23,7 @@ async function countStudents(path) {
             studentsByFields[field] = [studentArray[0]];
           }
         }
-  
+
         for (const field in studentsByFields) {
           if (Object.prototype.hasOwnProperty.call(studentsByFields, field)) {
             const list = studentsByFields[field];
