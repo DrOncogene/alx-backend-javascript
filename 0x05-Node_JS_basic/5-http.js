@@ -49,7 +49,7 @@ const app = http.createServer(async (req, res) => {
     if (dbName) {
       summary = await countStudents(dbName)
         .then((res) => res)
-        .catch((err) => console.log(err));
+        .catch((err) => err.message);
     }
     res.write(resText += summary);
   }
