@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-export function readDatabase (path) {
+function readDatabase(path) {
   return new Promise((res, rej) => {
     fs.readFile(path, { encoding: 'utf-8' }, (err, data) => {
       if (err) {
@@ -28,3 +28,5 @@ export function readDatabase (path) {
     });
   });
 }
+
+export default readDatabase;

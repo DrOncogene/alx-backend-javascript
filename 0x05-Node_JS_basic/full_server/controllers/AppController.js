@@ -1,6 +1,8 @@
-export class AppController {
+class AppController {
   static getHomepage(req, resp, next) {
-    resp.greeting = 'Hello Holberton School!';
+    req.greeting = 'Hello Holberton School!';
     next();
   }
 }
+
+export default AppController;
