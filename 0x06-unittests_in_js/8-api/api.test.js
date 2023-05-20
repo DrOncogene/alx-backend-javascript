@@ -10,7 +10,7 @@ describe('payment api', () => {
   });
   it('test response data is correct', () => {
     request.get(URL, (err, res) => {
-      expect(res.body).to.be.equal('Welcome to the payment system');
+      expect(res).has.property('body', 'Welcome to the payment system');
     });
   });
 });
