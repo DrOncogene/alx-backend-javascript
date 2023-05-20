@@ -1,7 +1,7 @@
 const sinon = require('sinon');
 const moncha = require('mocha');
 const expect = require('chai').expect;
-const sendPaymentRequestToApi = require('./3-payments.js');
+const sendPaymentRequestToApi = require('./3-payment.js');
 const utils = require('./utils.js')
 
 describe('sendPaymentRequestToApi', () => {
