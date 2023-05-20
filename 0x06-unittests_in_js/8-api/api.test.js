@@ -1,7 +1,7 @@
 const request = require('request');
 const { expect } = require('chai');
 
-describe('payment api', () => {
+describe('payment api home', () => {
   const URL = 'http://localhost:7865/';
   it('test status code for GET / is 200', (done) => {
     request.get(URL, (err, res) => {
