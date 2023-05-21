@@ -14,6 +14,6 @@ process.stdin.once('data', (name) => {
 });
 
 process.on('SIGINT', () => {
-  console.log('\rThis important software is now closing');
+  console.log('This important software is now closing');
   process.exit();
 });
